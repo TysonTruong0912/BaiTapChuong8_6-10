@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title> Câu 29 </title>
+</head>
+<body>
+    <form id = "form1" onsubmit = "getFormvalue(event)">
+        First name:
+        <input type = "text" id = "fname" name = "fname" value = "Si">
+        <br><br>
+        Last name:
+        <input type = "text" id = "lname" name = "lname" value = "Truong">
+        <br><br>
+        <input type = "submit" value = "Submit">
+    </form>
+    <p id = "result"></p>
+    <script>
+        function getFormvalue(event) {
+            event.preventDefault();
+            var fname = document.getElementById("fname").value;
+            var lname = document.getElementById("lname").value;
+            document.getElementById("result").innerHTML = "Họ và tên: " + fname +  " " + lname;
+        }
+    </script>
+</body>
+</html>

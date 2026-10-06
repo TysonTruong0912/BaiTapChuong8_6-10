@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Câu 32</title>
+</head>
+<body>
+    <div>
+        <button onclick = "display_random_image()">
+            Show Image
+        </button>
+    </div>
+    <br>
+    <div id = "imageArea"></div>
+    <script>
+        function display_random_image() {
+            var images = [
+                {
+                    src: "http://farm4.static.flickr.com/3123/2341623661_7c99f48bbf.jpg",
+                    width: "240",
+                    height: "160"
+                },
+                {
+                    src: "http://farm1.static.flickr.com/130/321287195_eb2a99e8a5.jpg",
+                    width: "240",
+                    height: "160"
+                },
+                {
+                    src: "http://farm4.static.flickr.com/3223/2342498701_9f6c3f0a7b.jpg",
+                    width: "240",
+                    height: "160"
+                }
+            ];
+            var randomIndex =
+                Math.floor(Math.random() * images.length);
+            var image = images[randomIndex];
+            var img = document.createElement("img");
+            img.src = image.src;
+            img.width = image.width;
+            img.height = image.height;
+            document.getElementById("imageArea").innerHTML = "";
+            document.getElementById("imageArea").appendChild(img);
+        }
+    </script>
+</body>
+</html>

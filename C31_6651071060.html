@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Câu 31</title>
+</head>
+<body>
+    <form>
+        <select id = "colorSelect">
+            <option value = "red">Đỏ</option>
+            <option value = "green">Xanh lá</option>
+            <option value = "white">Trắng</option>
+            <option value = "black"> Đen</option>
+        </select>
+        <input type = "button"
+               onclick = "removecolor()"
+               value = "Select and Remove">
+    </form>
+    <script>
+        function removecolor() {
+            var select = document.getElementById("colorSelect");
+            select.remove(select.selectedIndex);
+        }
+    </script>
+</body>
+</html>
