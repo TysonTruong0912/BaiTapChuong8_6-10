@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Câu 6</title>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+
+<form>
+
+    Select your favorite Color:
+
+    <select id="mySelect">
+        <option>Red</option>
+        <option>Green</option>
+        <option>Blue</option>
+        <option>White</option>
+    </select>
+
+    <input
+        type="button"
+        id="count"
+        value="Count and Output all items"
+    >
+
+</form>
+
+<script>
+$(document).ready(function() {
+
+    $("#count").click(function() {
+
+        var count = $("#mySelect option").length;
+
+        var result = "";
+
+        $("#mySelect option").each(function() {
+
+            result += $(this).text() + "\n";
+
+        });
+
+        alert(
+            "Số lượng: " + count +
+            "\n\n" +
+            result
+        );
+
+    });
+
+});
+</script>
+
+</body>
+</html>

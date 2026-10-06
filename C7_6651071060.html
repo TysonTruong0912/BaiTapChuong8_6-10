@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Câu 7</title>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+
+<h2>
+    Nhập đường link và nhấn "Submit" để chuyển hướng:
+</h2>
+
+<form id="linkForm">
+
+    <input
+        type="text"
+        id="linkInput"
+        placeholder="Nhập đường link"
+    >
+
+    <button type="submit">
+        Submit
+    </button>
+
+</form>
+
+<script>
+$(document).ready(function() {
+
+    $("#linkForm").submit(function(event) {
+
+        event.preventDefault();
+
+        var link = $("#linkInput").val().trim();
+
+        if (link == "") {
+
+            alert("Vui lòng nhập đường link!");
+
+            return;
+        }
+
+        if (
+            !link.startsWith("http://") &&
+            !link.startsWith("https://")
+        ) {
+            link = "https://" + link;
+        }
+
+        var answer = confirm(
+            "Bạn có muốn chuyển đến:\n" + link
+        );
+
+        if (answer == true) {
+
+            window.location.href = link;
+
+        }
+
+    });
+
+});
+</script>
+
+</body>
+</html>

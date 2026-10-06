@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Câu 8</title>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <style>
+        body {
+            margin-top: 50px;
+            text-align: center;
+            font-family: Arial;
+        }
+
+        input {
+            width: 60px;
+            height: 30px;
+            font-size: 18px;
+            text-align: center;
+        }
+
+        button {
+            width: 40px;
+            height: 32px;
+            margin: 2px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <input type="text" id="so1">
+
+    <button class="pheptinh">+</button>
+    <button class="pheptinh">-</button>
+    <button class="pheptinh">×</button>
+    <button class="pheptinh">/</button>
+    <button class="pheptinh">^</button>
+
+    <input type="text" id="so2">
+
+    <span> = </span>
+
+    <input type="text" id="ketqua" readonly>
+
+
+<script>
+
+$(document).ready(function() {
+
+    $(".pheptinh").click(function() {
+
+        var so1 = Number($("#so1").val());
+        var so2 = Number($("#so2").val());
+
+        var phepTinh = $(this).text();
+
+        var ketQua;
+
+
+        // Phép cộng
+        if (phepTinh == "+") {
+
+            ketQua = so1 + so2;
+
+        }
+
+
+        // Phép trừ
+        else if (phepTinh == "-") {
+
+            ketQua = so1 - so2;
+
+        }
+
+
+        // Phép nhân
+        else if (phepTinh == "×") {
+
+            ketQua = so1 * so2;
+
+        }
+
+
+        // Phép chia
+        else if (phepTinh == "/") {
+
+            if (so2 == 0) {
+
+                alert("Không thể chia cho 0!");
+
+                return;
+            }
+
+            ketQua = so1 / so2;
+
+        }
+
+
+        // Lũy thừa
+        else if (phepTinh == "^") {
+
+            ketQua = Math.pow(so1, so2);
+
+        }
+
+
+        $("#ketqua").val(ketQua);
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>
